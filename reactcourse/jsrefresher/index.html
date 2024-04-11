@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        let a = 'Hey ';
+        let b  = 'This is Ashish';
+        console.log(a+b);
+        function hello ()
+        {
+            console.log("hey ashish")
+        }
+        let name = {
+            first:'Ashish',
+            last:'Adhikari',
+            func: function myfunc(number) {
+                console.log("The number is " + number);
+            }
+        }
+        document,addEventListener("click", function click(){
+            console.log("clicked");
+            //alert("hello")
+            let conf = confirm("Are you sure");
+            //console.log(conf);
+        })
+
+        let arr = [2, 3, 5];
+        let jrr = arr.reverse();
+        let fba = {
+            a: this,
+            func : function myfunc() {
+                console.log("the number is " + this);
+            }
+        }
+        setTimeout(() => {
+            console.log("yayy")
+        }, 3000);
+        console.log("neeche wali script")
+    </script>
+    <h1>I am learning JS</h1>
+    
+</body>
+</html>
