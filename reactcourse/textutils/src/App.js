@@ -5,12 +5,9 @@ import TextForm from './components/textform';
 import About from './components/About';
 import { useState } from 'react';
 import Alert from './components/Alert';
-import { createRoot } from "react-dom/client";
 import {
-  createBrowserRouter,
-  RouterProvider,
   Route,
-  Link,
+  Routes,
   BrowserRouter,
 } from "react-router-dom";
 
@@ -49,10 +46,17 @@ function App() {
     }, 1500);
   }
   return (
-    <>
-
+    <>  
     <BrowserRouter>
+    <Navbar title="TextUtils" aboutUs="About TextUtils" mode= {mode} toggleMode={toggleMode} showAlert={showAlert}/>
+    <Alert alert={alert}/>
+   
+    <Routes>
+    <Route exact path='/' element={<TextForm heading='Enter a text to change' mode = {mode} showAlert={showAlert}/>}></Route>
+    <Route exact path='/about' element={<About />}> </Route>
+    </Routes>
     </BrowserRouter>
+    </>
   );
 }
 
