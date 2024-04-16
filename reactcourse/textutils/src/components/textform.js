@@ -41,6 +41,17 @@ export default function TextForm(props){
         props.showAlert('Reversing text operation is successful.','success')
 
     }
+    const wordCounter = (str)=> 
+    {
+        if(str!=='')
+        {
+        const array = str.trim().split(/\s+/); 
+        return array.length; 
+        }
+        else
+        return ('0');
+        
+    }
     return( 
         <div className="Container" style={{color:props.mode==='light'?'black':'white',backgroundColor:props.mode==='light'?'white':'rgb(59 64 170)'}}>
         <div className="Container" >
@@ -56,7 +67,7 @@ export default function TextForm(props){
 
         </div>
         <div className="container my-3">
-            <p>Total words {text.split(" ").length} Total characters {text.length} </p>
+            <p>Total words {wordCounter(text)} Total characters {text.length} </p>
         </div>
         <div className="container" >
             <h1>Preview</h1>

@@ -5,6 +5,15 @@ import TextForm from './components/textform';
 import About from './components/About';
 import { useState } from 'react';
 import Alert from './components/Alert';
+import { createRoot } from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+  BrowserRouter,
+} from "react-router-dom";
+
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -15,6 +24,13 @@ function App() {
       setMode('dark')
       document.body.style.backgroundColor='rgb(59 64 170)'
       showAlert('Dark Mode has been set.','success');
+      document.title='TextUtils - Dark Mode'
+      // setInterval(() => {
+      //   document.title='Install TextUtils'
+      // }, 1000);
+      // setInterval(() => {
+      //   document.title='It is amazing'
+      // }, 1500); /* Used for blinking*/
     }
     else
     {
@@ -33,14 +49,10 @@ function App() {
     }, 1500);
   }
   return (
-    <>  
-    <Navbar title="TextUtils" aboutUs="About TextUtils" mode= {mode} toggleMode={toggleMode} showAlert={showAlert}/>
-    <Alert alert={alert}/>
-    <div className='container'>
-    <TextForm heading='Enter a text to change' mode = {mode} showAlert={showAlert}/>
-    </div>
-    {/* <About/> */}
-    </>
+    <>
+
+    <BrowserRouter>
+    </BrowserRouter>
   );
 }
 
