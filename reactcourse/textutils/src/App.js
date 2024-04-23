@@ -15,7 +15,17 @@ import {
 function App() {
   const [mode, setMode] = useState('light');
   const [alert,setAlert] = useState(null);
-  const toggleMode = () => {
+  const removeBodyClasses = () => 
+  {
+    document.body.classList.remove('bg-primary')
+    document.body.classList.remove('bg-danger')
+    document.body.classList.remove('bg-warning')
+    document.body.classList.remove('bg-info')
+
+  }
+  const toggleMode = (colorr) => {
+    //removeBodyClasses();
+    //document.body.classList.add('bg-'+colorr);
     if (mode === 'light')
     {
       setMode('dark')
@@ -53,7 +63,7 @@ function App() {
    
     <Routes>
     <Route exact path='/' element={<TextForm heading='Enter a text to change' mode = {mode} showAlert={showAlert}/>}></Route>
-    <Route exact path='/about' element={<About />}> </Route>
+    <Route exact path='/about' element={<About mode={mode}/>}> </Route>
     </Routes>
     </BrowserRouter>
     </>

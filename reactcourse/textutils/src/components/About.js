@@ -1,32 +1,36 @@
 import React, { useState } from 'react'
 
-export default function About() {
-    const [myStyle,setmyStyle] = useState({
-        color:'black',
-        backgroundColor:'white'
-    })
-    const [textDarkorWhite,setTextDarkorWhite] = useState ('Set Dark Mode')
-    const toggleStyle =() => {
-        if (textDarkorWhite == 'Set Dark Mode')
-            {
-                setmyStyle({
-                color: 'white',
-                backgroundColor: 'black',
-                border:'1px solid white'
-            })
-            setTextDarkorWhite('Set White Mode')
-            }
-            
-        else
-            {
-                setmyStyle({
-                color:'black',
-                backgroundColor:'white'
-                
-            })
-            setTextDarkorWhite('Set Dark Mode')
-            }       
+export default function About(props) {
+   let myStyle = {
+        color:props.mode==='light'?'black':'white',
+        backgroundColor:props.mode==='light'?'white':'rgb(59 64 170)'
     }
+    // const [myStyle,setmyStyle] = useState({
+    //     color:'black',
+    //     backgroundColor:'white'
+    // })
+    // const [textDarkorWhite,setTextDarkorWhite] = useState ('Set Dark Mode')
+    // const toggleStyle =() => {
+    //     if (textDarkorWhite == 'Set Dark Mode')
+    //         {
+    //             setmyStyle({
+    //             color: 'white',
+    //             backgroundColor: 'black',
+    //             border:'1px solid white'
+    //         })
+    //         setTextDarkorWhite('Set White Mode')
+    //         }
+            
+    //     else
+    //         {
+    //             setmyStyle({
+    //             color:'black',
+    //             backgroundColor:'white'
+                
+    //         })
+    //         setTextDarkorWhite('Set Dark Mode')
+    //         }       
+    // }
 
   return (
     <div className="container" style={myStyle}>
@@ -67,9 +71,6 @@ export default function About() {
                 </div>
                 </div>
             </div>
-            </div>
-            <div className="container">
-            <button type="button" style={myStyle} className="btn btn-primary my-3" onClick={toggleStyle}> {textDarkorWhite}</button>
             </div>
     </div>
    
